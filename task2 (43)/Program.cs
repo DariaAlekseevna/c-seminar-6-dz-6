@@ -15,14 +15,24 @@ while ((!int.TryParse(Console.ReadLine(), out b1)) || (!int.TryParse(Console.Rea
 
 System.Console.WriteLine("прямые: y = " + k1 + " * x + " + b1+ ", y = "+ k2 + " * x + " + b2);
 
+
 double x = 0;
 double y = 0;
 double b = 0;
 double k = 0;
 
-b = b2 - b1;
-k = k1 - k2;
-x = b/k;
-y = k1 * x + b1;
+if (k1 == k2)
+{
+    x = b2 - b1;
+    y = k1 * x + b1;
+}
+else   
+{
+    b = b2 - b1;
+    k = k1 - k2;
+    x = b/k;
+    y = k1 * x + b1;
+}
+
 
 System.Console.WriteLine("точка пересечения прямых равна: (" + x + "; " + y + ")");
